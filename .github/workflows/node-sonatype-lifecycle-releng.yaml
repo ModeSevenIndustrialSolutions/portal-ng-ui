@@ -44,7 +44,7 @@ on:
         required: false
         type: string
         default: '.'
-    # Required for re-usable workflows; access must be explicit
+    # Required for re-usable workflows; secrets must be explicitly defined
     secrets:
       NEXUS_IQ_PASSWORD:
         description: "Nexus IQ Password"
@@ -52,7 +52,7 @@ on:
 
 jobs:
 
-  node-verify-clm:
+  node-sonatype-cli:
     name: "Node.js Sonatype Lifecycle"
     runs-on: ubuntu-latest
     steps:
