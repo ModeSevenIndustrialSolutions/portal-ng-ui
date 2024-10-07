@@ -58,7 +58,9 @@ jobs:
     steps:
 
       # NOT necessary in Gerrit workflows; will be performed by calling workflow
-      - uses: actions/checkout@v4
+      - name: "Checkout GitHub repository"
+        if: ${{ vars.GERRIT_MIRROR != 'true' }}
+        uses: actions/checkout@v4
 
       - name: "Build Node.js project"
         # yamllint disable-line rule:line-length
